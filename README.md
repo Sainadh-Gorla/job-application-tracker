@@ -1,6 +1,6 @@
 # Job Application Tracker
 
-A full-stack React dashboard for tracking job applications across the hiring pipeline — built with a headless WordPress CMS, OpenAI API integration, and Jest unit tests.
+A full-stack React dashboard for tracking job applications across the hiring pipeline. built with a headless WordPress CMS, OpenAI API integration, and Jest unit tests.
 
 ## Features
 

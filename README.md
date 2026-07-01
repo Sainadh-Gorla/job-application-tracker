@@ -1,16 +1,49 @@
-# React + Vite
+# Job Application Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack React dashboard for tracking job applications across the hiring pipeline — built with a headless WordPress CMS, OpenAI API integration, and Jest unit tests.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Application dashboard** — Add, edit, and delete job applications with company, role, location, status, and notes
+- **Pipeline tracking** — Filter and sort applications by status (Applied, Interview, Offer, Rejected), company, or role
+- **Career tips feed** — Live sidebar pulling posts from a headless WordPress CMS via the REST API
+- **Skill gap analyzer** — Paste any job description to get a plain-English AI summary of matched skills, skill gaps, and application priority (powered by OpenAI GPT-4o Mini)
+- **Accessible** — Semantic HTML landmarks, ARIA labels, keyboard navigation, and live region announcements
+- **Tested** — 20 Jest unit tests across core components using React Testing Library
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Layer | Technology |
+|---|---|
+| Frontend | React 18, JavaScript, HTML, CSS |
+| Build tool | Vite |
+| CMS | WordPress (headless) via REST API |
+| AI | OpenAI API (GPT-4o Mini) |
+| Backend proxy | Node.js, Express |
+| Testing | Jest, React Testing Library |
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+- Node.js v18+
+- [LocalWP](https://localwp.com/) for the WordPress CMS
+- OpenAI API key ([platform.openai.com](https://platform.openai.com))
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/Sainadh-Gorla/job-application-tracker.git
+cd job-application-tracker
+```
+
+### 2. Install frontend dependencies
+```bash
+npm install
+```
+
+### 3. Set up the proxy server
+```bash
+cd server
+npm install
+```
+
+Create a `.env` file inside the `server` folder:

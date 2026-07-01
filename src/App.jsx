@@ -25,7 +25,13 @@ export default function App() {
   } = useApplications();
 
   const [showAnalyzer, setShowAnalyzer] = useState(false);
-
+  const [announcement, setAnnouncement] = useState("");
+  const handleDelete = (id) => {
+  const app = applications.find((a) => a.id === id);
+  deleteApplication(id);
+  setAnnouncement(`${app.role} at ${app.company} has been removed.`);
+  setTimeout(() => setAnnouncement(""), 3000);
+};
   const handleSave = (formData) => {
     if (editingApp) {
       updateApplication(formData);
@@ -37,6 +43,14 @@ export default function App() {
   return (
     <>
       <a href="#main-content" className="skip-link">
+      <div
+  role="status"
+  aria-live="polite"
+  aria-atomic="true"
+  className="sr-only"
+>
+  {announcement}
+</div>
         Skip to main content
       </a>
 
@@ -104,7 +118,7 @@ export default function App() {
                       <ApplicationCard
                         application={app}
                         onEdit={openEditForm}
-                        onDelete={deleteApplication}
+                        onDelete={handleDelete}
                       />
                     </li>
                   ))}
